@@ -140,7 +140,7 @@ function validate_password(password) {
 }
 
 function validate_field(field) {
-  if (field == null) {
+  /* if (field == null) {
     return false
   }
 
@@ -148,5 +148,11 @@ function validate_field(field) {
     return false
   } else {
     return true
+  } */
+
+  //fatorizei por esta trecho
+  if (field === undefined) {
+    return false
   }
+  return !(field.length <= 0);
 }
