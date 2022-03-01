@@ -24,12 +24,12 @@ function register () {
   const milk_before_cereal = document.getElementById('milk_before_cereal').value
 
   // Validate input fields
-  if (validate_email(email) == false || validate_password(password) == false) {
+  if (!(validate_email(email) || validate_password(password))) {
     alert('Email or Password is Outta Line!!')
     return
     // Don't continue running the code
   }
-  if (validate_field(full_name) == false || validate_field(favourite_song) == false || validate_field(milk_before_cereal) == false) {
+  if (!(validate_field(full_name) || validate_field(favourite_song) || validate_field(milk_before_cereal))) {
     alert('One or More Extra Fields is Outta Line!!')
     return
   }
@@ -74,7 +74,7 @@ function login () {
   const password = document.getElementById('password').value
 
   // Validate input fields
-  if (validate_email(email) == false || validate_password(password) == false) {
+  if (!(validate_email(email)|| validate_password(password) )) {
     alert('Email or Password is Outta Line!!')
     return
     // Don't continue running the code
