@@ -17,11 +17,11 @@ const database = firebase.database()
 // Set up our register function
 function register () {
   // Get all our input fields
-  email = document.getElementById('email').value
-  password = document.getElementById('password').value
-  full_name = document.getElementById('full_name').value
-  favourite_song = document.getElementById('favourite_song').value
-  milk_before_cereal = document.getElementById('milk_before_cereal').value
+  const email = document.getElementById('email').value
+  const password = document.getElementById('password').value
+  const full_name = document.getElementById('full_name').value
+  const favourite_song = document.getElementById('favourite_song').value
+  const milk_before_cereal = document.getElementById('milk_before_cereal').value
 
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
@@ -38,13 +38,13 @@ function register () {
   auth.createUserWithEmailAndPassword(email, password)
   .then(function() {
     // Declare user variable
-    var user = auth.currentUser
+    const user = auth.currentUser
 
     // Add this user to Firebase Database
-    var database_ref = database.ref()
+    let database_ref = database.ref()
 
     // Create User data
-    var user_data = {
+    const user_data = {
       email : email,
       full_name : full_name,
       favourite_song : favourite_song,
@@ -60,8 +60,8 @@ function register () {
   })
   .catch(function(error) {
     // Firebase will use this to alert of its errors
-    var error_code = error.code
-    var error_message = error.message
+    const error_code = error.code
+    const error_message = error.message
 
     alert(error_message)
   })
@@ -70,8 +70,8 @@ function register () {
 // Set up our login function
 function login () {
   // Get all our input fields
-  email = document.getElementById('email').value
-  password = document.getElementById('password').value
+  const email = document.getElementById('email').value
+  const password = document.getElementById('password').value
 
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
@@ -83,13 +83,13 @@ function login () {
   auth.signInWithEmailAndPassword(email, password)
   .then(function() {
     // Declare user variable
-    var user = auth.currentUser
+    const user = auth.currentUser
 
     // Add this user to Firebase Database
-    var database_ref = database.ref()
+    let database_ref = database.ref()
 
     // Create User data
-    var user_data = {
+    const user_data = {
       last_login : Date.now()
     }
 
@@ -102,8 +102,8 @@ function login () {
   })
   .catch(function(error) {
     // Firebase will use this to alert of its errors
-    var error_code = error.code
-    var error_message = error.message
+    const error_code = error.code
+    const error_message = error.message
 
     alert(error_message)
   })
