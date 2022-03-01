@@ -115,13 +115,16 @@ function login () {
 // Validate Functions
 function validate_email(email) {
   expression = /^[^@]+@\w+(\.\w+)+\w$/
-  if (expression.test(email) == true) {
+  
+  /* if (expression.test(email)) {
     // Email is good
     return true
   } else {
     // Email is not good
     return false
-  }
+  } */
+  //fatorizei por esta linha
+  return expression.test(email);
 }
 
 function validate_password(password) {
