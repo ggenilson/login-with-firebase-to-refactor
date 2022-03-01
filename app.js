@@ -129,11 +129,14 @@ function validate_email(email) {
 
 function validate_password(password) {
   // Firebase only accepts lengths greater than 6
-  if (password < 6) {
+  /* if (password < 6) {
     return false
   } else {
     return true
-  }
+  } */
+
+  //fatorizei por esta linha
+  return password.length > 6;
 }
 
 function validate_field(field) {
